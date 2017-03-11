@@ -21,6 +21,6 @@ export default (
 		<Route path='/future' component={Future} />				
 		<Route path='/past' component={Past} />		
 		<Route path='/playground' component={Playground} />		
-		<Route path='/' component={Wait} />
+		<Route path='/wait' component={Wait} />
 	</Route>
 )
