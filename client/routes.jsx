@@ -16,8 +16,7 @@ const Wait = () => {
 }
 
 export default (
-	<Route path ='' component={App}>
-		<Route path='/' component={Timeline} />		
+	<Route path ='/' component={App}>
 		<Route path='/future' component={Future} />				
 		<Route path='/past' component={Past} />		
 		<Route path='/recs' component={Recs} />		
