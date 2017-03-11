@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import Links from './Links.jsx';
 
-class About extends Component {
+class Timeline extends Component {
 	render () {
 		return (
 			<div>
-				THIS IS THE HEADER.
-				<Links />
+				Reserved for TIMELINE.
 		        {this.props.children}
 			</div>
 		)
 	}
 }
 
-export default About;
+export default Timeline;

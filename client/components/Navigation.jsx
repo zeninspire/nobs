@@ -17,8 +17,8 @@ class Navigation extends Component {
                     </Navbar.Header>
                     <Navbar.Collapse>
                         <Nav pullRight>
-                            <NavItem eventKey={1} href="#" onClick={() => browserHistory.push("/about")}>Booked Venues</NavItem>
-                            <NavItem eventKey={2} onClick={() => browserHistory.push("/portfolio")}>Past Venues</NavItem>
+                            <NavItem eventKey={1} href="#" onClick={() => browserHistory.push("/future")}>Booked Venues</NavItem>
+                            <NavItem eventKey={2} onClick={() => browserHistory.push("/past")}>Past Venues</NavItem>
                         </Nav>
                     </Navbar.Collapse>    
                 </Navbar>
