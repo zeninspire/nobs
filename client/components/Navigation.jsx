@@ -9,17 +9,18 @@ class Navigation extends Component {
                 <Navbar fluid>
                     <Navbar.Header>
                         <Navbar.Brand>
-                        <a onClick={() => browserHistory.push("/about")}>Whichever user that logs in from Facebook</a>
+                            <Navbar.Text>
+                                Signed in as: John Dough
+                            </Navbar.Text>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
-                    <Nav>
-                    <NavItem eventKey={1} href="#" onClick={() => browserHistory.push("/about")}>[used to be about me] but this should be BOOKED FUTURE EVENTS</NavItem>
-                    <NavItem eventKey={2} onClick={() => browserHistory.push("/portfolio")}>[used to be portfolio] but this SHould be PAST EVENTS</NavItem>
-                    <NavDropdown eventKey={3} title="Playground" id="basic-nav-dropdown">
-                        <MenuItem eventKey={3.1}>Action1</MenuItem>                        
-                    </NavDropdown>
-                    </Nav>
+                    <Navbar.Collapse>
+                        <Nav pullRight>
+                            <NavItem eventKey={1} href="#" onClick={() => browserHistory.push("/about")}>Booked Venues</NavItem>
+                            <NavItem eventKey={2} onClick={() => browserHistory.push("/portfolio")}>Past Venues</NavItem>
+                        </Nav>
+                    </Navbar.Collapse>    
                 </Navbar>
 			</div>
 		)
