@@ -19,7 +19,7 @@ class Timeline extends Component {
 		return (
 			<div>
             <div id="timeline-wrapper"></div>
-            {showEvent ? <Moment selectedEventData={selectedEventData}/> : null}
+            {showEvent ? <Moment selectedEventData={selectedEventData}  xPos={xPos} />: null}
 
 			</div>
 		)
