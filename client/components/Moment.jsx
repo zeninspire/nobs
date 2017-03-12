@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { ButtonToolbar, OverlayTrigger, Button, Popover } from 'react-bootstrap';
 
+import OpenTable from '../containers/OpenTable_container';
+
 const popoverClick = (name) => {
 	return (
 		<Popover id="popover-trigger-click" title={name}>
@@ -25,7 +27,9 @@ class Moment extends Component {
       					<Button>Click</Button>
    					</OverlayTrigger>
 				</ButtonToolbar>	
-				<div className='openTable'></div>			
+				<div className='openTable'>
+					<OpenTable/>
+				</div>			
 			</div>
         )
 	}
