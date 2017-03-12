@@ -15,21 +15,27 @@ const popoverClick = (name) => {
 class Moment extends Component {
 	render () {
 	    let { selectedEventData } = this.props;
-		let { name, place, date, start_Time, friendsAttending} = selectedEventData;
-		console.log('friendsAttending: ', friendsAttending)
+		let { name, place, start_time, friendsAttending} = selectedEventData;
+		let friendsGoing = [];
+		if (friendsAttending) {
+			for (var i = 0; i < friendsAttending.length; i++) {
+				friendsGoing.push(friendsAttending[i].name)
+			}
+		};
 		return (
-			<div>
-				<div className='moment'>
-					name: {name}<br/>
-				</div>
-				<ButtonToolbar>
-					<OverlayTrigger trigger="click" placement="bottom" overlay={popoverClick(name)}>
-      					<Button>Click</Button>
-   					</OverlayTrigger>
-				</ButtonToolbar>	
-				<div className='openTable'>
-					<OpenTable/>
-				</div>			
+			<div className='moment'>
+				<Popover
+					id={name}
+					placement="bottom"
+					positionLeft={50}
+					positionTop={200}
+					title={name}
+					>
+					<strong>Time:</strong> {start_time._i} <br/>
+					<strong>Location:</strong> {place ? place.name+', '+place.location.street+', '+place.location.city : 'San Francisco'} <br/>
+					<strong>Friends attending:</strong> {friendsGoing.length>0 ? friendsGoing.join(', ') : <Button bsStyle='info'>Invite Friends</Button>} <br/>
+				</Popover>
+				<div className='openTable'></div>			
 			</div>
         )
 	}

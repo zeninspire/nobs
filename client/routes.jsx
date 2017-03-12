@@ -5,6 +5,7 @@ import App from './components/App.jsx';
 import Future from './components/Future.jsx';
 import Past from './components/Past.jsx';
 import Recs from './components/Recs.jsx';
+import Landing from './components/Landing.jsx';
 
 const Wait = () => {
 	return (
@@ -15,7 +16,8 @@ const Wait = () => {
 }
 
 export default (
-	<Route path ='/' component={App}>
+	<Route path ='/app' component={App}>
+		<Route path="/" component={Landing}/>
 		<Route path='/future' component={Future} />				
 		<Route path='/past' component={Past} />		
 		<Route path='/recs' component={Recs} />		
