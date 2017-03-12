@@ -195,13 +195,18 @@ var TimeKnots = {
     .style("opacity", 0)})
     .on("click", function(d) {
       if (currentlySelectedEvent === d.name) {
+        d3.select(this).style("fill", function(d){if(d.color != undefined){return d.color} return cfg.color}).transition()
+        currentlySelectedEvent = null;
         cfg.onClick(false);  
       } else {
+        d3.select(this)
+        .style("fill", "green").transition()
+        currentlySelectedEvent = d.name
         cfg.onClick(true, d, d3.mouse(this)[0]);
       }
+
       
-      d3.select(this)
-        .style("fill", "green")
+
         // .style("stroke", "green")
     })
 
