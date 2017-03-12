@@ -9,7 +9,8 @@ const mapStateToProps = (state) => {
   // return state.timeline
   return {
     selectedEventData: state.timeline.selectedEventData,
-    openTableIsLoading: state.timeline.openTableIsLoading
+    openTableIsLoading: state.timeline.openTableIsLoading,
+    openTableData: state.timeline.openTableData
   }
   // return {
   //   timeLine: state.timeLine,

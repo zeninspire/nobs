@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import request from 'superagent'
+import { ButtonToolbar, OverlayTrigger, Button, Popover } from 'react-bootstrap';
 
 import moment from 'moment'
 
@@ -24,7 +25,6 @@ class OpenTable extends Component {
 
     fetchOTData(query)
 
-      console.log(query)
     request
       .get('http://localhost:3060/otData')
       .query(query)
@@ -53,15 +53,28 @@ class OpenTable extends Component {
     
   // }
 
+  displayRestaurants (array) {
+    var arr = [];
+    console.log('array', array);
+
+    for (var i = 0; i < array.length; i++) {
+      arr.push(
+        <div id={i}><strong>{array[i].name}</strong>&nbsp;&nbsp;<Button style={{"marginLeft": "auto"}} bsSize="small" onClick={()=> window.location = array[0].reservation_url} bsStyle='danger'>6:30pm</Button></div>
+        )
+    }
+    return arr;
+  }
+
   componentDidMount () {
     this.onLoad();
   }
 
   render () {
-    let { openTableIsLoading } = this.props;
+    let { openTableIsLoading, openTableData } = this.props;
     return (
       <div>
-        {openTableIsLoading ? <img src="https://www.cinerexparana.com/img/loading.gif"/>: null}
+        {openTableIsLoading ? <img style={{"marginLeft": "50px"}}src="https://www.cinerexparana.com/img/loading.gif"/>: 
+        <div>{this.displayRestaurants(openTableData)}</div>}
       </div>
     )
   }

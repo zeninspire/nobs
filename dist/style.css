@@ -13,9 +13,9 @@
 
 .moment {
   position: fixed;
-  top: 10%;
-  left: 40%;
-  width: 400px
+  top: 0%;
+  left: -137px;
+  width: 1700px
 }
 
 .sud {
@@ -25,4 +25,17 @@
 .jumbotron {
    background: rgb(200, 54, 54); /* This is for ie8 and below */
    background: rgba(200, 54, 54, 0.5); 
+}
+
+.backdrop {
+  width: 100%;
+  height: 95%;
+  opacity: 0.7;
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+
+/* background-image: url('http://cdn.wallpapersafari.com/22/51/sGgI4L.jpg');
+ background-size: cover;
+ background-repeat: no-repeat;*/
 }
