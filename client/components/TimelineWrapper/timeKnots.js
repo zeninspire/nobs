@@ -192,7 +192,7 @@ var TimeKnots = {
       cfg.onClick(true, d);
       d3.select(this)
         .style("fill", "green")
-        .style("stroke", "green")
+        // .style("stroke", "green")
     })
 
     //Adding start and end labels

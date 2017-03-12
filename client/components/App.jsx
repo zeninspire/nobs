@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from './Navigation.jsx';
-import Timeline from './Timeline.jsx';
+import Timeline from '../containers/TimelineView.jsx';
 
 
 class App extends Component {
