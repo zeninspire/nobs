@@ -35,7 +35,7 @@ var openTableController = function(req, res) {
 
     })
     .set('Content-Type', 'application/json')
-    .set('Authorization', 'Bearer 27037c67-f394-4cfd-ab51-069ac71132fb')
+    .set('Authorization', credentials.otClient)
     .end(function (err, otRes) {
       if (err) {
         res.send(err)
@@ -72,7 +72,7 @@ var getRestaurantData = function(id) {
       request
         .get('https://platform.otqa.com/sync/listings/' + id)
         .set('Content-Type', 'application/json')
-        .set('Authorization', 'Bearer 27037c67-f394-4cfd-ab51-069ac71132fb')
+        .set('Authorization', credentials.otClient)
         .end(function(err, res) {
           if (err) {
             reject(err)
