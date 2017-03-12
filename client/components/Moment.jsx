@@ -15,7 +15,7 @@ const popoverClick = (name) => {
 class Moment extends Component {
 	render () {
 	    let { selectedEventData, xPos } = this.props;
-		console.log("xPos", xPos)
+
 		let { name, place, start_time, friendsAttending} = selectedEventData;
 		let friendsGoing = [];
 		if (friendsAttending) {
@@ -23,6 +23,7 @@ class Moment extends Component {
 				friendsGoing.push(friendsAttending[i].name)
 			}
 		};
+		console.log('xpos', xPos);
 		return (
 			<div className='moment'>
 				<Popover
@@ -34,9 +35,13 @@ class Moment extends Component {
 					>
 					<strong>Time:</strong> {start_time._i} <br/>
 					<strong>Location:</strong> {place ? place.name+', '+place.location.street+', '+place.location.city : 'San Francisco'} <br/>
-					<strong>Friends attending:</strong> {friendsGoing.length>0 ? friendsGoing.join(', ') : <Button bsStyle='info'>Invite Friends</Button>} <br/>
+					<strong>Friends attending:</strong> {friendsGoing.length>0 ? friendsGoing.join(', ') : <Button bsSize="small" bsStyle='info'>Invite Friends</Button>} <br/>
+					<hr/>
+					<div className='openTable'>
+						<OpenTable/>
+					</div>
 				</Popover>
-				<div className='openTable'></div>			
+
 			</div>
         )
 	}

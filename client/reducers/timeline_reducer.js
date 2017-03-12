@@ -14,6 +14,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch(action.type) {
     case TOGGLE_EVENT:
+    console.log('xpso', action.xPos);
       return {
         ...state,
         showEvent: action.showEvent,
