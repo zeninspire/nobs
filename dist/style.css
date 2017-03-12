@@ -1,9 +1,9 @@
-#timeline-wrapper {
+/*#timeline-wrapper {
   position: fixed;
   top: 20%;
   left: 30%;
   right: 30%;
-}
+}*/
 
 .booking {
   position: fixed;
@@ -14,7 +14,7 @@
 .moment {
   position: fixed;
   top: 10%;
-  left: 35%;
+  left: 40%;
   width: 400px
 }
 

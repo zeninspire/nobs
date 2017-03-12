@@ -14,7 +14,8 @@ const popoverClick = (name) => {
 
 class Moment extends Component {
 	render () {
-	    let { selectedEventData } = this.props;
+	    let { selectedEventData, xPos } = this.props;
+		console.log("xPos", xPos)
 		let { name, place, start_time, friendsAttending} = selectedEventData;
 		let friendsGoing = [];
 		if (friendsAttending) {
@@ -27,7 +28,7 @@ class Moment extends Component {
 				<Popover
 					id={name}
 					placement="bottom"
-					positionLeft={50}
+					positionLeft={xPos}
 					positionTop={200}
 					title={name}
 					>
