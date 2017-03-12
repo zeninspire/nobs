@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Event from './Event.jsx';
 
 import TimeKnots from './TimelineWrapper/TimeKnots'
 
@@ -24,7 +25,6 @@ class Timeline extends Component {
 				Reserved for TIMELINE.
 		        {showEvent ? <div>POPUP!</div> : null}
             <div id="timeline-wrapper"></div>
-
 			</div>
 		)
 	}
