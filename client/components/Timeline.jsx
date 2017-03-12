@@ -14,15 +14,15 @@ const kurbickFilms = [{id: 0, name:"Day of the Fight", date: "1951-04-26", img: 
 class Timeline extends Component {
   componentDidMount () {
     const $timelineWrapper = document.getElementById("timeline-wrapper");
-    console.log('this is timeline', $timelineWrapper);
-    TimeKnots.draw("#timeline-wrapper", kurbickFilms, {dateFormat: "%B %Y", color: "#696", width:500, showLabels: true, labelFormat: "%Y"})
+    TimeKnots.draw("#timeline-wrapper", kurbickFilms, {onClick: this.props.toggleEvent, dateFormat: "%B %Y", color: "#696", width:500, showLabels: true, labelFormat: "%Y"})
   }
 
 	render () {
+    let { showEvent, toggleEvent } = this.props;
 		return (
 			<div>
 				Reserved for TIMELINE.
-		        {this.props.children}
+		        {showEvent ? <div>POPUP!</div> : null}
             <div id="timeline-wrapper"></div>
 
 			</div>

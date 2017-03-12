@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './components/App.jsx';
-import Timeline from './components/Timeline.jsx';
+import Timeline from './Containers/TimelineView.jsx';
 import Future from './components/Future.jsx';
 import Past from './components/Past.jsx';
 import Playground from './components/Playground.jsx';

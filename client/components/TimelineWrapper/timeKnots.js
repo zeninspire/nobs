@@ -181,6 +181,7 @@ var TimeKnots = {
 
     })
     .on("mouseout", function(){
+        cfg.onClick(false);
         d3.select(this)
         .style("fill", function(d){if(d.background != undefined){return d.background} return cfg.background}).transition()
         .duration(100).attr("r", function(d){if(d.radius != undefined){return d.radius} return cfg.radius});
@@ -189,9 +190,10 @@ var TimeKnots = {
     .style("opacity", 0)})
     .on("click", function(d) {
       console.log('click', d);
-      cfg.onClick();
+      cfg.onClick(true);
       d3.select(this)
-        .style("fill", "black")
+        .style("fill", "green")
+        .style("stroke", "green")
     })
 
     //Adding start and end labels
