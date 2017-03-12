@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Event from './Event.jsx';
 
 import TimeKnots from './TimelineWrapper/TimeKnots'
+import fbData from '../reducers/data/fbData'
+
 
 const kurbickFilms = [{id: 0, name:"Day of the Fight", date: "1951-04-26", img: "http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Day_of_the_Fight_title.jpg/215px-Day_of_the_Fight_title.jpg"},
   {id: 1, name:"The Seafarers",  date:"1953-10-15", img: "http://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Seafarers_title.jpg/225px-Seafarers_title.jpg"},
@@ -13,13 +15,18 @@ const kurbickFilms = [{id: 0, name:"Day of the Fight", date: "1951-04-26", img: 
 ];
 
 class Timeline extends Component {
+  componentWillMount () {
+    //FB api call should normally be in componentDidMount. However, since we are stubbing the data, we will put it here.
+    // this.props.fetchFBData();
+  }
+
   componentDidMount () {
     const $timelineWrapper = document.getElementById("timeline-wrapper");
-    TimeKnots.draw("#timeline-wrapper", kurbickFilms, {onClick: this.props.toggleEvent, dateFormat: "%B %Y", color: "#696", width:500, showLabels: true, labelFormat: "%Y"})
+    TimeKnots.draw("#timeline-wrapper", fbData, {onClick: this.props.toggleEvent, dateFormat: "%B %Y", color: "#696", width:500, showLabels: true, labelFormat: "%Y"})
   }
 
 	render () {
-    let { showEvent, toggleEvent } = this.props;
+    let { showEvent, toggleEvent, fbEventData } = this.props;
 		return (
 			<div>
 				Reserved for TIMELINE.

@@ -1,9 +1,12 @@
-import { TOGGLE_EVENT } from '../actions/actions';
+import { TOGGLE_EVENT, FETCH_FB_DATA } from '../actions/actions';
+import fbData from './data/fbData.js'
 
 const initialState = {
 
-  showEvent: false
+  showEvent: false,
+  fbEventData: []
 };
+
 
 
 export default (state = initialState, action) => {
@@ -15,6 +18,11 @@ export default (state = initialState, action) => {
         ...state,
         showEvent: action.showEvent
       };
+    case FETCH_FB_DATA:
+      return {
+        ...state,
+        fbEventData: fbData
+      }
     default:
       return state;
   }
