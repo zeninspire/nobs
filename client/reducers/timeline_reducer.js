@@ -1,4 +1,4 @@
-import { TOGGLE_EVENT, FETCH_FB_DATA, HOVER_EVENT } from '../actions/actions';
+import { TOGGLE_EVENT, FETCH_FB_DATA, FETCH_OT_DATA, HOVER_EVENT, RECEIVE_OT_DATA } from '../actions/actions';
 import fbData from './data/fbData.js'
 
 const initialState = {
@@ -6,7 +6,9 @@ const initialState = {
   stickEvent: false,
   xPos: 0,
   fbEventData: [],
-  selectedEventData: {}
+  selectedEventData: {},
+  openTableIsLoading: true,
+  openTableData: []
 };
 
 export default (state = initialState, action) => {
@@ -28,6 +30,18 @@ export default (state = initialState, action) => {
       return {
         ...state,
         fbEventData: fbData
+      }
+    case FETCH_OT_DATA:
+      return {
+        ...state,
+        openTableIsLoading: true,
+        openTableData: []
+      }
+    case RECEIVE_OT_DATA:
+      return {
+        ...state,
+        openTableIsLoading: false,
+        openTableData: action.data
       }
     default:
       return state;
