@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var compiler = webpack(webpackConfig);
 
+var openTableCtrl = require('./controller/openTableController');
+
 app.use(webpackDevMiddleware(compiler, {
   publicPath: "/",
   stats: {
@@ -31,10 +33,16 @@ app.use(webpackDevMiddleware(compiler, {
 // serve static file
 app.use(express.static(path.join(__dirname,'../dist')));
 
+
+app.get('/otData', function (request, response) {
+  openTableCtrl(request, response);
+})
+
 // re-configuring for react-router browserHistory:
 app.get('*', function (request, response){
   response.sendFile(path.resolve(__dirname, '../dist', 'index.html'))
 })
+
 
 // rather than below
 // app.get('/', function(req, res) {
