@@ -1,5 +1,8 @@
 const noop = function() {};
 
+var currentlySelectedEvent;
+
+
 var TimeKnots = {
   draw: function(id, events, options){
     var cfg = {
@@ -16,7 +19,8 @@ var TimeKnots = {
       addNow: false,
       seriesColor: d3.scale.category20(),
       dateDimension: true,
-      onClick: noop
+      onClick: noop,
+      onHover: noop,
     };
 
 
@@ -158,7 +162,7 @@ var TimeKnots = {
         }
         return Math.floor(cfg.width/2)
     }).on("mouseover", function(d){
-      cfg.onClick(true, d);
+      // cfg.onClick(true, d);
       if(cfg.dateDimension){
         var format = d3.time.format(cfg.dateFormat);
         var datetime = format(new Date(d.date));
@@ -182,19 +186,24 @@ var TimeKnots = {
 
     })
     .on("mouseout", function(){
-        cfg.onClick(false);
+        // cfg.onClick(false);
         d3.select(this)
         .style("fill", function(d){if(d.background != undefined){return d.background} return cfg.background}).transition()
         .duration(100).attr("r", function(d){if(d.radius != undefined){return d.radius} return cfg.radius});
         tip.transition()
         .duration(100)
     .style("opacity", 0)})
-    // .on("click", function(d) {
-    //   cfg.onClick(true, d);
-    //   d3.select(this)
-    //     .style("fill", "green")
-    //     // .style("stroke", "green")
-    // })
+    .on("click", function(d) {
+      if (currentlySelectedEvent === d.name) {
+        cfg.onClick(false);  
+      } else {
+        cfg.onClick(true, d, d3.mouse(this)[0]);
+      }
+      
+      d3.select(this)
+        .style("fill", "green")
+        // .style("stroke", "green")
+    })
 
     //Adding start and end labels
     if(cfg.showLabels != false){

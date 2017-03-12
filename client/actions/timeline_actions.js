@@ -1,9 +1,18 @@
-import { TOGGLE_EVENT, FETCH_FB_DATA } from './actions'
+import { TOGGLE_EVENT, FETCH_FB_DATA, HOVER_EVENT } from './actions'
 
 
-export const toggleEvent = function(showEvent, eventData = {}) {
+export const toggleEvent = function(showEvent, eventData = {}, xPos = 0) {
   return {
     type: TOGGLE_EVENT,
+    showEvent,
+    eventData,
+    xPos
+  }
+}
+
+export const hoverEvent = function(showEvent, eventData = {}) {
+  return {
+    type: HOVER_EVENT,
     showEvent,
     eventData
   }
