@@ -1,7 +1,7 @@
 import React, { Component }  from 'react'
 import { connect }           from 'react-redux'
 
-import { toggleEvent }          from '../actions/timeline_actions'
+import { toggleEvent, fetchFBData }          from '../actions/timeline_actions'
 
 // import { startFetch }        from '../actions/action_get_places';
 // import { updateListing }     from '../actions/action_single_place';
@@ -10,7 +10,6 @@ import { toggleEvent }          from '../actions/timeline_actions'
 import Timeline           from '../components/Timeline.jsx';
 
 const mapStateToProps = (state) => {
-  console.log('state', state);
   return state.timeline
   // return {
   //   timeLine: state.timeLine,
@@ -20,7 +19,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleEvent: (showEvent) => {dispatch(toggleEvent(showEvent))}
+  toggleEvent: (showEvent) => {dispatch(toggleEvent(showEvent))},
+  fetchFBData: () => {dispatch(fetchFBData())}
   // startFetch: () => {dispatch(startFetch())},
   // setMap: (mapState, mapSet) => {dispatch(setMap(mapState, mapSet))},
   // updateListing: (listing) => {dispatch(updateListing(listing))}
