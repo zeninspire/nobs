@@ -11,7 +11,7 @@ class Timeline extends Component {
 
   componentDidMount () {
     const $timelineWrapper = document.getElementById("timeline-wrapper");
-    TimeKnots.draw("#timeline-wrapper", fbData, {onHover: this.props.hoverEvent, onClick: this.props.toggleEvent, dateFormat: "%B %Y", color: "#696", width:window.innerWidth, showLabels: true, labelFormat: "%Y"})
+    TimeKnots.draw("#timeline-wrapper", fbData, {onHover: this.props.hoverEvent, onClick: this.props.toggleEvent, dateFormat: "%B %Y", color: "#696", width:600, showLabels: true, labelFormat: "%Y"})
   }
 
 	render () {
