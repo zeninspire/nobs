@@ -9,7 +9,7 @@ class Navigation extends Component {
                 <Navbar fluid>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a className='sud' href="#" onClick={() => browserHistory.push("/")}>Süding</a>
+                            <a className='sud' href="#" onClick={() => browserHistory.push("/timeline")}>Süding</a>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
