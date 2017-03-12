@@ -1,13 +1,12 @@
-import React, { Component }  from 'react'
-import { connect }           from 'react-redux'
-
-import { toggleEvent, fetchFBData }          from '../actions/timeline_actions'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { toggleEvent, fetchFBData } from '../actions/timeline_actions'
 
 // import { startFetch }        from '../actions/action_get_places';
 // import { updateListing }     from '../actions/action_single_place';
 // import { setMap }            from '../actions/map_action';
 
-import Timeline           from '../components/Timeline.jsx';
+import Timeline from '../components/Timeline.jsx';
 
 const mapStateToProps = (state) => {
   return state.timeline

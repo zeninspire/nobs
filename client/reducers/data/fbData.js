@@ -9,7 +9,7 @@ const concertEvent = {
     source: "imageSourceUrl"
   },
   description: "Concert for artist ABC!",
-  name: "ABC World Tour - San Francisco",
+  name: "Lee Jordan World Tour - San Francisco",
   place: {
     name: "Bill Graham Center",
     location: {
@@ -23,17 +23,15 @@ const concertEvent = {
     }
   },
   start_time: moment("2017-03-20 8:30", "x"), //date needs to match "date" and "targetTime" props
-
-
   //not from FB but we need:
   date: moment("2017-03-20", "YYYY[-]MM[-]D"), //date needs to match "date" and "targetTime" props
   eventType: "event",
   friendsAttending: [
-    {name: "Bob Liu", imgSrc: "pictureURL"},
-    {name: "Charles Liu", imgSrc: "pictureURL"},
-    {name: "Celine Liu", imgSrc: "pictureURL"},
-    {name: "Danny Liu", imgSrc: "pictureURL"},
-    {name: "Erik Liu", imgSrc: "pictureURL"},
+    {name: "Harry Potter", imgSrc: "pictureURL"},
+    {name: "Hermione Granger", imgSrc: "pictureURL"},
+    {name: "Ronald Weasley", imgSrc: "pictureURL"},
+    {name: "Fred Weasley", imgSrc: "pictureURL"},
+    {name: "George Weasley", imgSrc: "pictureURL"},
   ],
   targetTime: moment("2017-03-20 6:30", "x"), //date needs to match "date" and "targetTime" props
   searchRadius: 1, //search radius for OT, in miles. needs to be int
@@ -44,10 +42,10 @@ const friendBirthdayParty = {
   cover: {
     source: "imageSourceUrl"
   },
-  description: "John's birthday bash!",
-  name: "John's 25th Birthday Bash",
+  description: "Harry's birthday bash!",
+  name: "Harry's 37th Birthday Bash",
   place: {
-    name: "John's place",
+    name: "The Leaky Cauldron",
     location: {
       latitude: 37.7817644,
       longitude: -122.3912981,
@@ -58,20 +56,18 @@ const friendBirthdayParty = {
       zip: "94107"
     }
   },
-  start_time: moment("2017-05-21 10:30", "x"), //date needs to match "date" and "targetTime" props
-
-
+  start_time: moment("2017-07-31 10:30", "x"), //date needs to match "date" and "targetTime" props
   //not from FB but we need:
-  date: moment("2017-05-21", "YYYY[-]MM[-]D"), //date needs to match "date" and "targetTime" props
+  date: moment("2017-07-31", "YYYY[-]MM[-]D"), //date needs to match "date" and "targetTime" props
   eventType: "event",
   friendsAttending: [
-    {name: "Bob Liu", imgSrc: "pictureURL"},
-    {name: "Charles Liu", imgSrc: "pictureURL"},
-    {name: "Celine Liu", imgSrc: "pictureURL"},
-    {name: "Danny Liu", imgSrc: "pictureURL"},
-    {name: "Erik Liu", imgSrc: "pictureURL"},
+    {name: "Virginia Potter", imgSrc: "pictureURL"},
+    {name: "Albus Potter", imgSrc: "pictureURL"},
+    {name: "Lily Potter", imgSrc: "pictureURL"},
+    {name: "James Potter", imgSrc: "pictureURL"},
+    {name: "Joanne Rowling", imgSrc: "pictureURL"},
   ],
-  targetTime: moment("2017-05-21 6:30", "x"), //date needs to match "date" and "targetTime" props
+  targetTime: moment("2017-07-31 6:30", "x"), //date needs to match "date" and "targetTime" props
   searchRadius: 1, //search radius for OT, in miles. needs to be int
 }
 
@@ -82,8 +78,6 @@ const friendBirthdayParty = {
 const anniversary = {
   id: 12,
   start_time: moment("2017-05-03", "x"),
-  
-
   //not from FB but we need:
   name: "Anniversary",
   date: moment("2017-05-03", "YYYY[-]MM[-]D"),
@@ -94,8 +88,6 @@ const anniversary = {
   },
   searchRadius: 3,
 }
-
-
 
 module.exports = [
   concertEvent,

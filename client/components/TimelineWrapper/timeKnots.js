@@ -158,6 +158,7 @@ var TimeKnots = {
         }
         return Math.floor(cfg.width/2)
     }).on("mouseover", function(d){
+      cfg.onClick(true, d);
       if(cfg.dateDimension){
         var format = d3.time.format(cfg.dateFormat);
         var datetime = format(new Date(d.date));
@@ -188,12 +189,12 @@ var TimeKnots = {
         tip.transition()
         .duration(100)
     .style("opacity", 0)})
-    .on("click", function(d) {
-      cfg.onClick(true, d);
-      d3.select(this)
-        .style("fill", "green")
-        // .style("stroke", "green")
-    })
+    // .on("click", function(d) {
+    //   cfg.onClick(true, d);
+    //   d3.select(this)
+    //     .style("fill", "green")
+    //     // .style("stroke", "green")
+    // })
 
     //Adding start and end labels
     if(cfg.showLabels != false){
