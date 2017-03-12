@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleEvent: (showEvent) => {dispatch(toggleEvent(showEvent))},
+  toggleEvent: (showEvent, eventData) => {dispatch(toggleEvent(showEvent, eventData))},
   fetchFBData: () => {dispatch(fetchFBData())}
   // startFetch: () => {dispatch(startFetch())},
   // setMap: (mapState, mapSet) => {dispatch(setMap(mapState, mapSet))},

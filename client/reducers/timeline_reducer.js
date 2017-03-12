@@ -4,7 +4,8 @@ import fbData from './data/fbData.js'
 const initialState = {
 
   showEvent: false,
-  fbEventData: []
+  fbEventData: [],
+  selectedEventData: {}
 };
 
 
@@ -16,7 +17,8 @@ export default (state = initialState, action) => {
     case TOGGLE_EVENT:
       return {
         ...state,
-        showEvent: action.showEvent
+        showEvent: action.showEvent,
+        selectedEventData: action.eventData
       };
     case FETCH_FB_DATA:
       return {

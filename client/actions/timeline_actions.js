@@ -1,10 +1,11 @@
 import { TOGGLE_EVENT, FETCH_FB_DATA } from './actions'
 
 
-export const toggleEvent = function(showEvent) {
+export const toggleEvent = function(showEvent, eventData = {}) {
   return {
     type: TOGGLE_EVENT,
-    showEvent
+    showEvent,
+    eventData
   }
 }
 
