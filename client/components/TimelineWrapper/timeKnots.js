@@ -189,8 +189,7 @@ var TimeKnots = {
         .duration(100)
     .style("opacity", 0)})
     .on("click", function(d) {
-      console.log('click', d);
-      cfg.onClick(true);
+      cfg.onClick(true, d);
       d3.select(this)
         .style("fill", "green")
         .style("stroke", "green")

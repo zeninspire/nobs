@@ -26,12 +26,12 @@ class Timeline extends Component {
   }
 
 	render () {
-    let { showEvent, toggleEvent, fbEventData } = this.props;
+    let { showEvent, toggleEvent, fbEventData, selectedEventData } = this.props;
 		return (
 			<div>
 				Reserved for TIMELINE.
-		        {showEvent ? <div>POPUP!</div> : null}
             <div id="timeline-wrapper"></div>
+            {showEvent ? JSON.stringify(selectedEventData): null}
 			</div>
 		)
 	}
